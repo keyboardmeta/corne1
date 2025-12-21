@@ -38,12 +38,6 @@
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
         };
-        
-        /* Miryoku specific behaviors */
-        combo: combo {
-            compatible = "zmk,behavior-key-toggle";
-            #binding-cells = <0>;
-        };
     };
 
     keymap {
