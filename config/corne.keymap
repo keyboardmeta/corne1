@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2020 The ZMK Contributors
+ * Miryoku Layout Implementation for Corne Keyboard
  *
  * SPDX-License-Identifier: MIT
  */
@@ -8,99 +9,123 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
 
-/* Định nghĩa các Layer */
-#define BASE 0
-#define NUM  1
-#define SYM  2
-#define MED  3
-#define NAV  4
-#define FUN  5
-#define MOU  6
+/* Layer definitions for Miryoku layout */
+#define BASE   0
+#define NAV    1
+#define MOUSE  2
+#define MEDIA  3
+#define NUM    4
+#define SYM    5
+#define FUN    6
 
 / {
     behaviors {
-        /* Home Row Mods: Giữ là Mod (Cmd, Alt, Ctrl, Shift), Nhấn nhanh là phím chữ */
+        /* Home Row Mods*/
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <220>;
-            quick-tap-ms = <175>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+        };
+        
+        /* Thumb layer keys */
+        lt: layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&kp>;
+        };
+        
+        /* Miryoku specific behaviors */
+        combo: combo {
+            compatible = "zmk,behavior-key-toggle";
+            #binding-cells = <0>;
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        /* Layer 0: Base Colemak-DH */
+        /* Layer 0: BASE - Miryoku Colemak-DHm */
         default_layer {
+            display-name = "Miryoku";
             bindings = <
-&none &kp Q       &kp W       &kp F        &kp P        &kp B            &kp J        &kp L        &kp U        &kp Y       &kp SQT        &none
-&none &hm LGUI A  &hm LALT R  &hm LCTRL S  &hm LSHFT T  &kp G            &kp M        &hm RSHFT N  &hm RCTRL E  &hm RALT I  &hm RGUI O     &none
-&none &kp Z       &kp X       &kp C        &kp D        &kp V            &kp K        &kp H        &kp COMMA    &kp DOT     &kp FSLH       &none
-                  &lt MED ESC &lt NUM BSPC &lt SYM TAB                  &lt FUN RET  &lt NAV SPACE &lt MOU DEL
+/* Left Hand */                                                                    /* Right Hand */
+&kp TAB     &kp Q       &kp W        &kp F        &kp P         &kp B               &kp J        &kp L        &kp U        &kp Y       &kp SQT        &kp C_MUTE
+&kp LCTRL   &hm LGUI A  &hm RALT R   &hm LCTRL S  &hm LSHFT T   &kp G               &kp M        &hm RSHFT N  &hm RCTRL E  &hm RALT I  &hm RGUI O    &kp C_VOL_UP
+&kp ESC     &kp Z       &kp X        &kp C        &kp D         &kp V               &kp K        &kp H        &kp COMMA    &kp DOT     &kp FSLH       &kp C_VOL_DN
+                       &lt MEDIA ESC &lt NAV SPACE &lt MOUSE TAB                         &lt SYM ENTER &lt NUM BSPC &lt FUN DEL
             >;
         };
 
-        /* Layer 1: NUM (Bàn phím số bên tay phải) */
-        num_layer {
+        /* Layer 1: NAV - Navigation & Arrows (Inverted T) */
+        nav_layer {
+            display-name = "Nav";
             bindings = <
-&none &kp LBKT    &kp N7      &kp N8       &kp N9       &kp RBKT         &none        &none        &none        &none       &none          &none
-&none &kp SEMI    &kp N4      &kp N5       &kp N6       &kp EQUAL        &none        &kp RSHFT    &kp RCTRL    &kp RALT    &kp RGUI       &none
-&none &kp GRAVE   &kp N1      &kp N2       &kp N3       &kp BSLH         &none        &none        &none        &none       &none          &none
+&none    &none       &none       &none        &none        &none                    &kp LC(Y)       &kp LC(V)      &kp LC(C)      &kp LC(X)     &kp LC(Z)     &none
+&none    &kp LGUI    &kp LALT    &kp LCTRL    &kp LSHFT    &none                    &kp CAPS        &kp LEFT       &kp DOWN       &kp UP        &kp RIGHT     &none
+&none    &none       &none       &none        &none        &none                    &kp INSERT      &kp HOME       &kp PG_DN      &kp PG_UP     &kp END       &none
+                   &trans &trans &trans                                                 &trans &trans &trans
+            >;
+        };
+
+        /* Layer 2: MOUSE - Mouse Controls */
+        mouse_layer {
+            display-name = "Mouse";
+            bindings = <
+&none    &none        &none        &none        &none        &none             &kp LC(Y)       &kp LC(V)      &kp LC(C)      &kp LC(X)     &kp LC(Z)     &none
+&none    &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHFT    &none             &none        &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_UP   &mmv MOVE_RIGHT &none
+&none    &none        &none        &none        &none        &none             &none        &msc SCRL_LEFT   &msc SCRL_DOWN &msc SCRL_UP   &msc SCRL_RIGHT &none
+                        &trans &trans &trans                                   &trans &trans &trans
+            >;
+        };
+
+        /* Layer 3: MEDIA - Media & Clipboard */
+        media_layer {
+            display-name = "Media";
+            bindings = <
+&none       &none       &none       &node        &none        &none            &none        &none        &none        &none       &none       &none
+&none       &kp LGUI    &kp RALT    &kp LCTRL    &kp LSHFT    &none            &none        &kp C_PREV   &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT  &none
+&none       &none       &none       &none        &none        &none            &none        &none        &none        &none       &none       &none
+                        &trans &trans &trans                         &trans &trans &kp C_MUTE
+            >;
+        };
+
+        /* Layer 4: NUM - Number Pad */
+        num_layer {
+            display-name = "Numbers";
+            bindings = <
+        &none &kp LBKT    &kp N7      &kp N8       &kp N9       &kp RBKT         &none        &none        &none        &none       &none          &none
+        &none &kp SEMI    &kp N4      &kp N5       &kp N6       &kp EQUAL        &none        &kp RSHFT    &kp RCTRL    &kp RALT    &kp RGUI       &none
+        &none &kp GRAVE   &kp N1      &kp N2       &kp N3       &kp BSLH         &none        &none        &none        &none       &none          &none
                               &kp DOT      &kp N0       &kp MINUS        &none        &none        &none
             >;
         };
 
-        /* Layer 2: SYM (Ký hiệu bên tay phải) */
+        /* Layer 5: SYM - Symbols Layer (Extended) */
         sym_layer {
+            display-name = "Symbols";
             bindings = <
-&none &kp LBRC    &kp AMPS    &kp ASTRK    &kp LPAR     &kp RBRC         &none        &none        &none        &none       &none          &none
-&none &kp COLON   &kp DLLR    &kp PRCNT    &kp CARET    &kp PLUS         &none        &kp RSHFT    &kp RCTRL    &kp RALT    &kp RGUI       &none
-&none &kp TILDE   &kp EXCL    &kp AT       &kp HASH     &kp PIPE         &none        &none        &none        &none       &none          &none
-                              &kp LPAR     &kp RPAR     &kp UNDER        &none        &none        &none
+&none       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE    &kp RIGHT_BRACE    &none                &none       &kp MINUS   &kp EQUAL    &kp BSLH     &kp PIPE     &none
+&none       &kp LG(LBRC)      &kp LG(RBRC)       &kp LG(LBRC)      &kp LG(RBRC)       &none                &none       &kp LG(MINUS) &kp LG(EQUAL) &kp LG(BSLH) &kp LG(PIPE) &none
+&none       &kp LG(LG(QMARK)) &kp LG(LG(SCLN))   &kp LG(LG(COLON)) &kp LG(LG(DOT))    &kp LG(LG(COMMA))    &none       &kp LG(SCLN) &kp LG(COLON) &kp LG(DOT) &kp LG(COMMA) &none
+                            &trans &trans &trans                         &trans &trans &trans
             >;
         };
 
-        /* Layer 3: MED (Media & Bluetooth tay trái) */
-        media_layer {
-            bindings = <
-&none &none       &none       &none        &none        &none            &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &none
-&none &kp LGUI    &kp LALT    &kp LCTRL    &kp LSHFT    &none            &none        &kp C_PREV   &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT    &none
-&none &none       &none       &none        &none        &none            &none        &none        &none        &none        &none         &none
-                              &none        &none        &none            &kp C_STOP   &kp C_PP     &kp C_MUTE
-            >;
-        };
-
-        /* Layer 4: NAV (Mũi tên & Di chuyển bên tay trái) */
-        nav_layer {
-            bindings = <
-&none &none       &none       &none        &none        &none            &none        &kp HOME     &kp UP       &kp END     &kp PG_UP     &none
-&none &kp LGUI    &kp LALT    &kp LCTRL    &kp LSHFT    &none            &none        &kp LEFT     &kp DOWN     &kp RIGHT   &kp PG_DN     &none
-&none &none       &none       &none        &none        &none            &none        &kp INS      &kp BSPC     &kp DEL     &none         &none
-                              &none        &none        &none            &kp RET      &kp SPACE    &kp TAB
-            >;
-        };
-
-        /* Layer 5: FUN (Phím F1-F12 bên tay trái) */
+        /* Layer 6: FUN - Function Keys */
         fun_layer {
+            display-name = "Function";
             bindings = <
-&none &kp F12     &kp F7      &kp F8       &kp F9       &kp PSCRN        &none        &none        &none        &none       &none          &none
-&none &kp F11     &kp F4      &kp F5       &kp F6       &kp SLCK         &none        &kp RSHFT    &kp RCTRL    &kp RALT    &kp RGUI       &none
-&none &kp F10     &kp F1      &kp F2       &kp F3       &kp PAUSE_BREAK  &none        &none        &none        &none       &none          &none
-                              &kp K_APP    &kp SPACE    &kp TAB          &none        &none        &none
+&none       &kp F1       &kp F2      &kp F3      &kp F4      &kp F5                   &kp F6          &kp F7        &kp F8      &kp F9      &kp F10      &bootloader  
+&none       &kp F11      &kp F12      &none        &none      &none                   &none        &none        &none        &none        &none        &none
+&none        &none        &none        &none        &none               &none            &none        &none        &none        &none        &none        &none
+                        &trans &trans &trans                         &trans &trans &trans
             >;
         };
 
-        /* Layer 6: MOU (Chuột - Đã sửa lỗi chính tả keycode) */
-        mouse_layer {
-            bindings = <
-&none &none       &none       &none        &none        &none            &none        &none            &none          &none          &none           &none
-&none &kp LGUI    &kp LALT    &kp LCTRL    &kp LSHFT    &none            &none        &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_UP   &mmv MOVE_RIGHT &none
-&none &none       &none       &none        &none        &none            &none        &msc SCRL_LEFT   &msc SCRL_DOWN &msc SCRL_UP   &msc SCRL_RIGHT &none
-                              &none        &none        &none            &mkp LCLK    &mkp RCLK        &mkp MCLK
-            >;
-        };
     };
 };
