@@ -48,7 +48,8 @@
         semicolon: semicolon {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none>;
+            bindings = <&kp SEMICOLON>, <&macro_press>, <&kp DOT &kp COMMA>;
+
             label = "SEMICOLON";
         };
     };
@@ -59,12 +60,12 @@
         /* Layer 0: BASE - Miryoku Colemak-DHm */
 
         default_layer {
-            display-name = "E26";
+            display-name = "Vlayout";
             bindings = <
-&kp TAB    &kp Q  &kp W       &kp F           &kp P      &kp B               &kp J           &kp L  &kp U            &kp Y       &kp SEMICOLON  &kp C_MUTE
-&kp LCTRL  &kp A  &hm RALT R  &hm LEFT_GUI S  &kp T      &kp G               &kp M           &kp N  &hm RIGHT_GUI E  &hm RALT I  &kp O          &kp C_VOL_UP
-&kp ESC    &kp Z  &kp X       &kp C           &kp D      &kp V               &kp K           &kp H  &kp COMMA        &kp DOT     &kp FSLH       &kp C_VOL_DN
-                              &lt 3 ESC       &kp SPACE  &sk LEFT_CONTROL    &sk LEFT_SHIFT  &to 4  &to 1
+&kp TAB    &kp Q  &kp W       &kp F               &kp P      &kp B             &kp J      &kp L  &kp U                &kp Y       &kp SEMICOLON  &kp C_MUTE
+&kp LCTRL  &kp A  &hm RALT R  &hm LEFT_CONTROL S  &kp T      &kp G             &kp M      &kp N  &hm RIGHT_CONTROL E  &hm RALT I  &kp O          &kp C_VOL_UP
+&kp ESC    &kp Z  &kp X       &kp C               &kp D      &kp V             &kp K      &kp H  &kp COMMA            &kp DOT     &kp FSLH       &kp C_VOL_DN
+                              &hm COLON ESC       &kp SPACE  &sk LEFT_SHIFT    &sk RMETA  &to 4  &to 1
             >;
         };
 
@@ -73,10 +74,10 @@
         nav_layer {
             display-name = "Nav";
             bindings = <
-&none  &none  &none     &none         &none  &none     &kp LC(Y)   &kp LC(V)  &kp LC(C)  &kp LC(X)  &kp LC(Z)  &none
-&none  &none  &kp LALT  &kp LEFT_GUI  &none  &none     &kp CAPS    &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &none
-&none  &none  &none     &none         &none  &none     &kp INSERT  &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &none
-                        &trans        &to 0  &trans    &trans      &trans     &trans
+&none  &none  &none     &none              &none  &none             &kp LC(Y)      &kp LC(V)  &kp LC(C)  &kp LC(X)  &kp LC(Z)  &none
+&none  &none  &kp LALT  &kp RIGHT_CONTROL  &none  &none             &kp CAPS       &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &none
+&none  &none  &none     &none              &none  &none             &kp INSERT     &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &none
+                        &trans             &to 0  &sk LEFT_SHIFT    &kp RIGHT_GUI  &to 4      &to 1
             >;
         };
 
@@ -106,13 +107,13 @@
 
         /* Layer 4: NUM - Number Pad */
 
-        num_layer {
-            display-name = "Numbers";
+        editlayer {
+            display-name = "Edit Layer";
             bindings = <
-&none  &kp LBKT      &kp N7  &kp N8      &kp N9  &kp RBKT     &none           &none          &none         &none     &none   &none
-&none  &kp SQT       &kp N4  &kp N5      &kp N6  &kp EQUAL    &kp ENTER       &kp BACKSPACE  &kp LEFT_WIN  &kp RALT  &none   &none
-&none  &kp NUMBER_0  &kp N1  &kp N2      &kp N3  &kp BSLH     &none           &none          &none         &none     &trans  &none
-                             &kp TILDE2  &to 0   &kp MINUS    &sk LEFT_SHIFT  &to 6          &to 1
+&none  &kp MINUS     &kp N7  &kp N8      &kp N9  &kp RBKT            &none          &none          &none             &none     &none      &none
+&none  &kp SQT       &kp N4  &kp N5      &kp N6  &kp LEFT_BRACKET    &kp TAB        &kp BACKSPACE  &sk LEFT_CONTROL  &kp RALT  &kp ENTER  &none
+&none  &kp NUMBER_0  &kp N1  &kp N2      &kp N3  &kp EQUAL           &none          &none          &none             &none     &trans     &none
+                             &kp TILDE2  &to 0   &sk LEFT_SHIFT      &sk RIGHT_GUI  &to 4          &to 1
             >;
         };
 
