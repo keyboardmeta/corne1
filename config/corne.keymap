@@ -60,7 +60,7 @@
         /* Layer 0: BASE - Miryoku Colemak-DHm */
 
         default_layer {
-            display-name = "Vlayout";
+            display-name = "VLayer";
             bindings = <
 &kp TAB    &kp Q  &kp W       &kp F               &kp P      &kp B             &kp J      &kp L  &kp U                &kp Y       &kp SEMICOLON  &kp C_MUTE
 &kp LCTRL  &kp A  &hm RALT R  &hm LEFT_CONTROL S  &kp T      &kp G             &kp M      &kp N  &hm RIGHT_CONTROL E  &hm RALT I  &kp O          &kp C_VOL_UP
@@ -110,10 +110,10 @@
         editlayer {
             display-name = "Edit Layer";
             bindings = <
-&none  &kp MINUS     &kp N7  &kp N8      &kp N9  &kp RBKT            &none          &none          &none             &none     &none      &none
-&none  &kp SQT       &kp N4  &kp N5      &kp N6  &kp LEFT_BRACKET    &kp TAB        &kp BACKSPACE  &sk LEFT_CONTROL  &kp RALT  &kp ENTER  &none
-&none  &kp NUMBER_0  &kp N1  &kp N2      &kp N3  &kp EQUAL           &none          &none          &none             &none     &trans     &none
-                             &kp TILDE2  &to 0   &sk LEFT_SHIFT      &sk RIGHT_GUI  &to 4          &to 1
+&none  &kp MINUS     &kp N7  &kp N8   &kp N9  &kp RBKT            &none          &none          &none             &none     &none      &none
+&none  &kp SQT       &kp N4  &kp N5   &kp N6  &kp LEFT_BRACKET    &kp TAB        &kp BACKSPACE  &sk LEFT_CONTROL  &kp RALT  &kp ENTER  &none
+&none  &kp NUMBER_0  &kp N1  &kp N2   &kp N3  &kp EQUAL           &none          &none          &none             &none     &to 6      &none
+                             &kp ESC  &to 0   &sk LEFT_SHIFT      &sk RIGHT_GUI  &to 4          &to 1
             >;
         };
 
