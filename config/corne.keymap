@@ -104,15 +104,15 @@
             layers = <0>;
         };
 
-        ToSym {
-            bindings = <&to 1>;
-            key-positions = <38 40>;
+        Kpress {
+            bindings = <&kp K>;
+            key-positions = <20 19>;
             layers = <0>;
         };
 
-        ToNum {
-            bindings = <&to 2>;
-            key-positions = <38 41>;
+        VPress {
+            bindings = <&kp V>;
+            key-positions = <16 15>;
             layers = <0>;
         };
     };
@@ -128,7 +128,7 @@
 &kp TAB    &kp Q  &kp W       &kp F               &kp P      &kp B             &kp J         &kp L  &kp U                &kp Y       &kp SEMICOLON  &kp C_MUTE
 &kp LCTRL  &kp A  &hm RALT R  &hm LEFT_CONTROL S  &kp T      &kp G             &kp M         &kp N  &hm RIGHT_CONTROL E  &hm RALT I  &kp O          &kp C_VOL_UP
 &kp ESC    &kp Z  &kp X       &kp C               &kp D      &kp V             &kp K         &kp H  &kp COMMA            &kp DOT     &kp FSLH       &kp C_VOL_DN
-                              &to 3               &kp SPACE  &sk LEFT_SHIFT    &sk LEFT_GUI  &sl 1  &sl 2
+                              &to 3               &kp SPACE  &sk LEFT_SHIFT    &sk LEFT_GUI  &to 1  &to 2
             >;
         };
 
@@ -148,7 +148,7 @@
 &none  &none         &kp N7        &kp N8        &kp N9        &kp MINUS         &kp LC(Y)     &kp LC(V)                &kp LC(C)  &kp LC(X)  &kp LC(Z)            &none
 &none  &kp PLUS      &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp ASTERISK      &kp LG(TAB)   &mt (LEFT) LA(RS(LEFT))  &kp DOWN   &kp UP     &mt LA(RIGHT) RIGHT  &none
 &none  &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH         &kp INSERT    &kp HOME                 &kp PG_DN  &kp PG_UP  &kp END              &none
-                                   &trans        &to 0         &sk LEFT_SHIFT    &sk LEFT_GUI  &sl 1                    &to 2
+                                   &trans        &to 0         &sk LEFT_SHIFT    &sk LEFT_GUI  &to 1                    &to 2
             >;
         };
 
