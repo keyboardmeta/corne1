@@ -145,10 +145,10 @@
         num_layer {
             display-name = "NumLayer";
             bindings = <
-&none  &none         &kp N7        &kp N8        &kp N9        &kp MINUS         &kp BSPC     &kp LC(V)     &kp LC(C)  &kp LC(X)  &kp LC(Z)  &none
-&none  &kp PLUS      &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp N0            &kp LG(TAB)  &kp LEFT_GUI  &kp ENTER  &kp ESC    &kp TAB    &none
-&none  &kp ASTERISK  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH         &none        &none         &kp PG_DN  &kp PG_UP  &kp END    &none
-                                   &trans        &to 0         &sk LEFT_SHIFT    &to 3        &to 1         &to 2
+&none  &none         &kp N7                 &kp N8        &kp N9                 &kp MINUS         &kp LG(RS(V))  &kp LC(V)           &kp LC(C)  &kp LC(X)  &kp LC(Z)  &none
+&none  &kp PLUS      &hm LEFT_ALT NUMBER_4  &hm LCTRL N5  &hm LEFT_WIN NUMBER_6  &kp N0            &kp LG(TAB)    &hm RIGHT_GUI LEFT  &kp DOWN   &kp UP     &kp RIGHT  &none
+&none  &kp ASTERISK  &kp NUMBER_1           &kp NUMBER_2  &kp NUMBER_3           &kp SLASH         &kp LG(D)      &kp HOME            &kp PG_DN  &kp PG_UP  &kp END    &none
+                                            &trans        &to 0                  &sk LEFT_SHIFT    &to 3          &to 1               &to 2
             >;
         };
 
@@ -168,7 +168,7 @@
 &bootloader  &none     &none     &none      &none      &none     &none   &none       &none         &none         &none       &none
 &none        &kp LGUI  &kp RALT  &kp LCTRL  &kp LSHFT  &none     &none   &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT  &none
 &none        &none     &none     &none      &none      &none     &none   &none       &none         &none         &none       &none
-                                 &trans     &trans     &trans    &trans  &trans      &kp C_MUTE
+                                 &trans     &to 0      &trans    &trans  &trans      &trans
             >;
         };
 
