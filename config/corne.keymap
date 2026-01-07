@@ -157,7 +157,7 @@
             bindings = <
 &none  &none    &none    &none    &none     &none     &none   &none          &none      &none    &none    &none
 &none  &kp TAB  &kp ESC  &kp RET  &kp BSPC  &none     &none   &kp BACKSPACE  &sk ENTER  &sk ESC  &kp TAB  &none
-&none  &none    &none    &none    &none     &none     &none   &none          &none      &none    &none    &none
+&none  &none    &none    &none    &none     &none     &none   &kp HOME       &none      &none    &kp END  &none
                          &trans   &to 0     &trans    &trans  &trans         &trans
             >;
         };
