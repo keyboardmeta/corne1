@@ -145,9 +145,9 @@
         num_layer {
             display-name = "NumLayer";
             bindings = <
-&none  &none         &kp N7                 &kp N8        &kp N9                 &kp MINUS           &kp LG(D)    &hm LC(RS(V)) LC(V)  &kp LC(C)  &kp LG(ENTER)  &kp LC(A)  &none
-&none  &kp PLUS      &hm LEFT_ALT NUMBER_4  &hm LCTRL N5  &hm LEFT_WIN NUMBER_6  &kp N0              &kp LG(TAB)  &hm RIGHT_GUI LEFT   &kp DOWN   &kp UP         &kp RIGHT  &none
-&none  &kp ASTERISK  &kp NUMBER_1           &kp NUMBER_2  &kp NUMBER_3           &kp SLASH           &none        &kp HOME             &kp PG_DN  &kp PG_UP      &kp END    &none
+&none  &none         &kp N7                 &kp N8        &kp N9                 &kp MINUS           &kp LG(D)    &hm LC(RS(V)) LC(V)  &kp LC(C)               &kp LG(ENTER)           &kp LC(A)  &none
+&none  &kp PLUS      &hm LEFT_ALT NUMBER_4  &hm LCTRL N5  &hm LEFT_WIN NUMBER_6  &kp N0              &kp LG(TAB)  &hm RIGHT_GUI LEFT   &hm RIGHT_CONTROL DOWN  &hm RIGHT_ALT UP_ARROW  &kp RIGHT  &none
+&none  &kp ASTERISK  &kp NUMBER_1           &kp NUMBER_2  &kp NUMBER_3           &kp SLASH           &none        &kp HOME             &kp PG_DN               &kp PG_UP               &kp END    &none
                                             &trans        &to 0                  &lt 4 LEFT_SHIFT    &to 3        &to 1                &to 2
             >;
         };
