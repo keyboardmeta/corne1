@@ -25,6 +25,8 @@
     quick-release;  // <--- Just this line. No "tap".
 };
 
+&sk { quick-release; };
+
 / {
     behaviors {
         /* Home Row Mods*/
