@@ -127,20 +127,20 @@
         default_layer {
             display-name = "VLayer";
             bindings = <
-&kp TAB    &kp Q  &kp W       &kp F               &kp P           &kp B             &kp J  &kp L            &kp U                &kp Y       &kp SEMICOLON  &kp C_MUTE
-&kp LCTRL  &kp A  &hm RALT R  &hm LEFT_CONTROL S  &hm LEFT_WIN T  &kp G             &kp M  &hm RIGHT_GUI N  &hm RIGHT_CONTROL E  &hm RALT I  &kp O          &kp C_VOL_UP
-&kp ESC    &kp Z  &kp X       &kp C               &kp D           &kp V             &kp K  &kp H            &kp COMMA            &kp DOT     &kp FSLH       &kp C_VOL_DN
-                              &kp ESC             &kp SPACE       &sk LEFT_SHIFT    &to 3  &sl 1            &to 2
+&kp TAB    &kp Q  &kp W       &kp F               &kp P           &kp B             &kp J  &kp L            &kp U                &kp Y                &kp SEMICOLON  &kp C_MUTE
+&kp LCTRL  &kp A  &hm RALT R  &hm LEFT_CONTROL S  &hm LEFT_WIN T  &kp G             &kp M  &hm RIGHT_GUI N  &hm RIGHT_CONTROL E  &hm RALT I           &kp O          &kp C_VOL_UP
+&kp ESC    &kp Z  &kp X       &kp C               &kp D           &kp V             &kp K  &kp H            &kp COMMA            &hm EXCLAMATION DOT  &kp FSLH       &kp C_VOL_DN
+                              &kp ESC             &kp SPACE       &sk LEFT_SHIFT    &to 3  &to 1            &to 2
             >;
         };
 
         symbollayer {
             display-name = "SymLayer";
             bindings = <
-&none  &kp EXCLAMATION  &kp AT_SIGN    &kp HASH           &kp DOLLAR      &kp PRCNT         &kp PLUS       &kp MINUS      &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &to 5  &none
-&none  &kp TILDE        &kp EQUAL      &kp DOUBLE_QUOTES  &kp SQT         &kp QUESTION      &kp COLON      &kp SEMICOLON  &kp LEFT_BRACE        &kp RIGHT_BRACE        &to 4  &none
-&none  &kp CARET        &kp AMPERSAND  &kp ASTERISK       &kp UNDERSCORE  &kp PIPE          &kp BACKSLASH  &kp SLASH      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &to 6  &none
-                                       &trans             &to 0           &sk LEFT_SHIFT    &to 3          &to 1          &to 2
+&none  &kp EXCLAMATION  &kp AT_SIGN  &kp HASH           &kp DOLLAR    &kp PRCNT         &kp MINUS  &kp PLUS       &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &to 5          &none
+&none  &kp TAB          &kp EQUAL    &kp DOUBLE_QUOTES  &kp SQT       &kp QUESTION      &kp COLON  &kp SEMICOLON  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp BACKSPACE  &none
+&none  &kp ESC          &kp CARET    &kp AMPERSAND      &kp ASTERISK  &kp GRAVE         &kp BSLH   &kp SLASH      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp ENTER      &none
+                                     &trans             &to 0         &sk LEFT_SHIFT    &to 3      &to 1          &to 2
             >;
         };
 
