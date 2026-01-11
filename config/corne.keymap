@@ -72,21 +72,21 @@
             compatible = "zmk,behavior-tap-dance";
             label = "L2";
             #binding-cells = <0>;
-            bindings = <&sl 6>, <&to 6>;
+            bindings = <&sl 5>, <&to 5>;
         };
 
         L3: L3 {
             compatible = "zmk,behavior-tap-dance";
             label = "L3";
             #binding-cells = <0>;
-            bindings = <&sl 5>, <&sl 5>;
+            bindings = <&sl 4>, <&sl 4>;
         };
 
         L5: L5 {
             compatible = "zmk,behavior-tap-dance";
             label = "L5";
             #binding-cells = <0>;
-            bindings = <&sl 3>, <&to 3>;
+            bindings = <&sl 0>, <&to 0>;
         };
 
         L6: L6 {
@@ -130,37 +130,27 @@
 &kp TAB    &kp Q  &kp W       &kp F               &kp P           &kp B             &kp J  &kp L            &kp U                &kp Y                &kp SEMICOLON  &kp C_MUTE
 &kp LCTRL  &kp A  &hm RALT R  &hm LEFT_CONTROL S  &hm LEFT_WIN T  &kp G             &kp M  &hm RIGHT_GUI N  &hm RIGHT_CONTROL E  &hm RALT I           &kp O          &kp C_VOL_UP
 &kp ESC    &kp Z  &kp X       &kp C               &kp D           &kp V             &kp K  &kp H            &kp COMMA            &hm EXCLAMATION DOT  &kp FSLH       &kp C_VOL_DN
-                              &kp ESC             &kp SPACE       &sk LEFT_SHIFT    &to 3  &to 1            &to 2
+                              &kp ESC             &kp SPACE       &sk LEFT_SHIFT    &to 2  &to 1            &to 5
             >;
         };
 
         symbollayer {
             display-name = "SymLayer";
             bindings = <
-&none  &kp EXCLAMATION  &kp AT_SIGN  &kp HASH           &kp DOLLAR    &kp PRCNT         &kp MINUS  &kp PLUS       &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &to 5          &none
+&none  &kp EXCLAMATION  &kp AT_SIGN  &kp HASH           &kp DOLLAR    &kp PRCNT         &kp MINUS  &kp PLUS       &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &to 4          &none
 &none  &kp TAB          &kp EQUAL    &kp DOUBLE_QUOTES  &kp SQT       &kp QUESTION      &kp COLON  &kp SEMICOLON  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp BACKSPACE  &none
 &none  &kp ESC          &kp CARET    &kp AMPERSAND      &kp ASTERISK  &kp GRAVE         &kp BSLH   &kp SLASH      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp ENTER      &none
-                                     &trans             &to 0         &sk LEFT_SHIFT    &to 3      &to 1          &to 2
+                                     &trans             &to 0         &sk LEFT_SHIFT    &to 2      &to 1          &to 4
             >;
         };
 
         num_layer {
             display-name = "NumLayer";
             bindings = <
-&none  &none         &kp N7                 &kp N8        &kp N9                 &kp MINUS           &kp LG(D)    &hm LC(RS(V)) LC(V)  &kp LC(C)               &kp LG(ENTER)           &kp LC(A)  &none
-&none  &kp PLUS      &hm LEFT_ALT NUMBER_4  &hm LCTRL N5  &hm LEFT_WIN NUMBER_6  &kp N0              &kp LG(TAB)  &hm RIGHT_GUI LEFT   &hm RIGHT_CONTROL DOWN  &hm RIGHT_ALT UP_ARROW  &kp RIGHT  &none
-&none  &kp ASTERISK  &kp NUMBER_1           &kp NUMBER_2  &kp NUMBER_3           &kp SLASH           &none        &kp HOME             &kp PG_DN               &kp PG_UP               &kp END    &none
-                                            &trans        &to 0                  &lt 4 LEFT_SHIFT    &to 3        &to 1                &to 2
-            >;
-        };
-
-        EditLayer {
-            display-name = "NavLayer";
-            bindings = <
-&none  &none    &none    &none    &none     &none             &none  &none          &none      &none    &none    &none
-&none  &kp TAB  &kp ESC  &kp RET  &kp BSPC  &none             &none  &kp BACKSPACE  &kp ENTER  &kp ESC  &kp TAB  &none
-&none  &kp END  &none    &none    &kp HOME  &none             &none  &kp HOME       &none      &none    &kp END  &none
-                         &trans   &to 0     &sk LEFT_SHIFT    &to 3  &to 1          &to 2
+&none  &none    &kp N7                 &kp N8        &kp N9                 &kp MINUS           &kp LG(D)    &hm RS(LG(V)) LC(V)  &kp UP_ARROW            &kp LG(ENTER)        &kp LC(A)      &none
+&none  &kp TAB  &hm LEFT_ALT NUMBER_4  &hm LCTRL N5  &hm LEFT_WIN NUMBER_6  &kp N0              &kp LG(TAB)  &hm RIGHT_GUI LEFT   &hm RIGHT_CONTROL DOWN  &hm RIGHT_ALT RIGHT  &kp BACKSPACE  &none
+&none  &kp ESC  &kp NUMBER_1           &kp NUMBER_2  &kp NUMBER_3           &kp PLUS            &none        &kp HOME             &kp PG_DN               &kp END              &kp ENTER      &none
+                                       &trans        &to 0                  &lt 3 LEFT_SHIFT    &to 2        &to 1                &to 4
             >;
         };
 
