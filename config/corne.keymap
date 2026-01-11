@@ -73,7 +73,7 @@
         };
 
         ToNav {
-            bindings = <&to 6>;
+            bindings = <&to 5>;
             key-positions = <37 40>;
         };
     };
