@@ -96,7 +96,7 @@
             bindings = <
 &none  &kp SINGLE_QUOTE  &kp AMPERSAND    &kp ASTERISK  &kp LEFT_PARENTHESIS   &kp LEFT_BRACKET     &none   &none     &none      &none     &none           &none
 &none  &kp BACKSPACE     &kp DOLLAR       &kp PERCENT   &kp CARET              &kp RIGHT_BRACKET    &none   &kp LGUI  &kp RCTRL  &kp RALT  &kp LEFT_SHIFT  &none
-&none  &kp PLUS          &kp EXCLAMATION  &kp AT_SIGN   &kp HASH               &kp PLUS             &none   &none     &none      &none     &none           &none
+&none  &kp PLUS          &kp EXCLAMATION  &kp AT_SIGN   &kp HASH               &kp BSLH             &none   &none     &none      &none     &none           &none
                                           &kp TILDE     &kp RIGHT_PARENTHESIS  &kp UNDERSCORE       &trans  &trans    &trans
             >;
         };
@@ -133,10 +133,10 @@
 
         NavLayer {
             bindings = <
-&trans  &trans          &trans        &trans     &trans        &trans    &trans  &kp LS(PAGE_UP)  &kp UP    &kp PAGE_DOWN  &trans  &trans
-&trans  &kp LEFT_SHIFT  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_GUI  &trans    &trans  &kp LEFT         &kp DOWN  &kp RIGHT      &trans  &trans
-&trans  &trans          &trans        &trans     &trans        &trans    &trans  &kp HOME         &trans    &kp END        &trans  &trans
-                                      &trans     &trans        &trans    &trans  &trans           &trans
+&trans  &trans          &trans        &trans     &trans        &trans    &trans       &kp LS(PAGE_UP)  &kp UP    &kp PAGE_DOWN  &trans  &trans
+&trans  &kp LEFT_SHIFT  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_GUI  &trans    &kp LA(TAB)  &kp LEFT         &kp DOWN  &kp RIGHT      &trans  &trans
+&trans  &trans          &trans        &trans     &trans        &trans    &trans       &kp HOME         &trans    &kp END        &trans  &trans
+                                      &trans     &trans        &trans    &trans       &trans           &trans
             >;
         };
 
