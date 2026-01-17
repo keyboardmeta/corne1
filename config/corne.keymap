@@ -74,6 +74,11 @@
             bindings = <&kp P>;
             key-positions = <8 9>;
         };
+
+        AltTap {
+            bindings = <&kp LA(TAB)>;
+            key-positions = <19 20 21>;
+        };
     };
 
     keymap {
