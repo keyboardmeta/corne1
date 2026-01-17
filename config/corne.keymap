@@ -60,21 +60,19 @@
             layers = <0>;
         };
 
-        Kpress {
-            bindings = <&kp K>;
-            key-positions = <31 32>;
-            layers = <0>;
+        Caps {
+            bindings = <&kp CLCK>;
+            key-positions = <36 41>;
         };
 
-        VPress {
-            bindings = <&kp V>;
-            key-positions = <27 28>;
-            layers = <0>;
+        QKey {
+            bindings = <&kp Q>;
+            key-positions = <2 3>;
         };
 
-        ToNav {
-            bindings = <&to 5>;
-            key-positions = <37 40>;
+        PKey {
+            bindings = <&kp P>;
+            key-positions = <8 9>;
         };
     };
 
@@ -86,10 +84,10 @@
         default_layer {
             display-name = "Thinh's Keyboard";
             bindings = <
-&kp TAB    &kp Q  &kp W           &kp E               &kp R           &kp T        &kp Y            &kp U           &kp I                &kp O            &kp P     &kp C_MUTE
-&kp LCTRL  &kp A  &hm LEFT_ALT S  &hm LEFT_CONTROL D  &hm LEFT_WIN F  &kp G        &kp H            &hm LEFT_WIN J  &hm RIGHT_CONTROL K  &hm L RIGHT_ALT  &kp SEMI  &kp C_VOL_UP
-&kp ESC    &kp Z  &kp X           &kp C               &kp V           &kp B        &kp N            &kp M           &kp COMMA            &kp DOT          &kp FSLH  &kp C_VOL_DN
-                                  &kp ESC             &kp SPACE       &sk ENTER    &sk RIGHT_SHIFT  &kp BACKSPACE   &kp TAB
+&kp TAB    &kp Q  &kp W           &kp E               &kp R           &kp T          &kp Y              &kp U            &kp I                &kp O            &kp P     &kp C_MUTE
+&kp LCTRL  &kp A  &hm LEFT_ALT S  &hm LEFT_CONTROL D  &hm LEFT_WIN F  &kp G          &kp H              &hm LEFT_WIN J   &hm RIGHT_CONTROL K  &hm L RIGHT_ALT  &kp SEMI  &kp C_VOL_UP
+&kp ESC    &kp Z  &kp X           &kp C               &kp V           &kp B          &kp N              &kp M            &kp COMMA            &kp DOT          &kp FSLH  &kp C_VOL_DN
+                                  &lt 4 ESC           &lt 5 SPACE     &lt 3 ENTER    &lt 1 RIGHT_SHIFT  &lt 2 BACKSPACE  &lt 6 TAB
             >;
         };
 
@@ -135,20 +133,20 @@
 
         NavLayer {
             bindings = <
-&trans  &trans  &kp N7  &kp N8  &kp N9  &trans       &trans         &kp V          &kp UP    &trans     &trans  &trans
-&trans  &trans  &kp N4  &kp N5  &kp N6  &kp N0       &trans         &kp LEFT       &kp DOWN  &kp RIGHT  &trans  &trans
-&trans  &trans  &kp N1  &kp N2  &kp N3  &trans       &trans         &trans         &trans    &trans     &trans  &trans
-                        &trans  &to 0   &sk RSHFT    &sk RIGHT_WIN  &sk RIGHT_ALT  &none
+&trans  &trans          &trans        &trans     &trans        &trans    &trans  &kp LS(PAGE_UP)  &kp UP    &kp PAGE_DOWN  &trans  &trans
+&trans  &kp LEFT_SHIFT  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_GUI  &trans    &trans  &kp LEFT         &kp DOWN  &kp RIGHT      &trans  &trans
+&trans  &trans          &trans        &trans     &trans        &trans    &trans  &kp HOME         &trans    &kp END        &trans  &trans
+                                      &trans     &trans        &trans    &trans  &trans           &trans
             >;
         };
 
         fun_layer {
             display-name = "Function";
             bindings = <
-&none  &kp F12  &kp F7  &kp F8  &kp F9  &none     &none   &none      &none      &none     &none     &bootloader
-&none  &kp F11  &kp F4  &kp F5  &kp F6  &none     &none   &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &none
-&none  &kp F10  &kp F1  &kp F2  &kp F3  &none     &none   &none      &none      &none     &none     &none
-                        &trans  &to 0   &trans    &trans  &trans     &trans
+&none  &kp F12  &kp F7  &kp F8  &kp F9  &none     &none   &none         &none      &none     &none           &bootloader
+&none  &kp F11  &kp F4  &kp F5  &kp F6  &none     &none   &kp LEFT_GUI  &kp RCTRL  &kp RALT  &kp LEFT_SHIFT  &none
+&none  &kp F10  &kp F1  &kp F2  &kp F3  &none     &none   &none         &none      &none     &none           &none
+                        &trans  &trans  &trans    &trans  &trans        &trans
             >;
         };
     };
